@@ -1,0 +1,4 @@
+**/.env
+
+# Contain GitHub Token
+i3status-rust/.config/i3status-rust/config.toml
