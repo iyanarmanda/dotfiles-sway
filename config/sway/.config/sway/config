@@ -19,7 +19,9 @@ set $term foot
 set $menu rofi -show drun -theme ~/.config/rofi/launcher.rasi
 
 # Other variables
-set $screenshot_script  ~/.config/sway/scripts/screenshot.sh
+set $screenshot_script      ~/.config/sway/scripts/screenshot.sh
+set $lock_wallpaper_script  ~/.config/sway/scripts/lock-wallpaper.sh
+set $lock_blur_script       ~/.config/sway/scripts/lock-blur.sh
 
 font pango:JetBrainsMono Nerd Font 10
 
@@ -27,7 +29,7 @@ smart_gaps on
 gaps inner 12px
 gaps outer 6px
 
-#hide_edge_borders smart
+hide_edge_borders smart
 default_border pixel 2
 default_floating_border pixel 2
 
@@ -52,11 +54,11 @@ exec mako
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
+exec swayidle -w \
+    timeout 600 $lock_wallpaper_script \
+    timeout 630 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+    before-sleep $lock_wallpaper_script
+
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
@@ -109,6 +111,8 @@ exec mako
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+    bindsym $mod+Ctrl+l  exec $lock_blur_script
 #
 # Moving around:
 #

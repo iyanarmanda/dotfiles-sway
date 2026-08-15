@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+swaylock \
+  --daemonize \
+  --image /usr/share/backgrounds/wallhaven-frieren.png \
+  --font "JetBrainsMono Nerd Font" \
+  --font-size 40 \
+  --disable-caps-lock-text \
+  --clock \
+  --timestr "%H:%M" \
+  --datestr "%d %b %Y" \
+  --indicator \
+  --indicator-radius 95 \
+  --indicator-thickness 3 \
+  --ring-color 89b4fa \
+  --ring-clear-color f38ba8 \
+  --ring-ver-color a6e3a1 \
+  --ring-wrong-color f38ba8 \
+  --inside-color 1e1e2e80 \
+  --inside-clear-color 1e1e2e99 \
+  --inside-ver-color 1e1e2e80 \
+  --inside-wrong-color eba0ac22 \
+  --text-color cdd6f4 \
+  --text-clear-color f5e0dc \
+  --text-ver-color 00000000 \
+  --text-wrong-color f38ba8 \
+  --key-hl-color f5e0dc \
+  --bs-hl-color f9e2af \
+  --line-color 00000000 \
+  --line-clear-color 00000000 \
+  --line-ver-color 00000000 \
+  --line-wrong-color 00000000 \
+  --separator-color 00000000 \
+  --grace 0 \
+  --fade-in 0
