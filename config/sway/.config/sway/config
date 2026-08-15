@@ -23,8 +23,20 @@ set $screenshot_script  ~/.config/sway/scripts/screenshot.sh
 
 font pango:JetBrainsMono Nerd Font 10
 
-gaps inner 10px
-gaps outer 10px
+smart_gaps on
+gaps inner 12px
+gaps outer 6px
+
+#hide_edge_borders smart
+default_border pixel 2
+default_floating_border pixel 2
+
+# client.<state>            <border> <background>  <text>   <indicator> <child_border>
+client.focused              #89dceb     #1e1e2e    #cdd6f4    #b4befe      #89dceb
+client.focused_inactive     #45475a     #181825    #a6adc8    #45475a      #45475a
+client.unfocused            #313244     #1e1e2e    #a6adc8    #313244      #313244
+client.urgent               #f38ba8     #11111b    #cdd6f4    #f38ba8      #f38ba8
+
 
 ### Output configuration
 
