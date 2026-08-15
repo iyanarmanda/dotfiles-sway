@@ -18,6 +18,9 @@ set $term foot
 # Your preferred application launcher
 set $menu rofi -show drun -theme ~/.config/rofi/launcher.rasi
 
+# Other variables
+set $screenshot_script  ~/.config/sway/scripts/screenshot.sh
+
 font pango:JetBrainsMono Nerd Font 10
 
 gaps inner 10px
@@ -230,7 +233,8 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    bindsym Print exec        $screenshot_script full
+    bindsym Shift+Print exec  $screenshot_script area
 
 #
 # Others
