@@ -3,6 +3,11 @@ export VISUAL="nvim"
 
 [[ $- != *i* ]] && return
 
+osc7_cwd() {
+    printf '\033]7;file://%s%s\033\\' "$HOSTNAME" "$PWD"
+}
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND;}osc7_cwd"
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
