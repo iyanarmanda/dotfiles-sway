@@ -310,4 +310,10 @@ bar {
     swaybar_command waybar
 }
 
+# Floating App
+for_window [class="(?i)^steam$"] floating enable
+for_window [class="(?i)^steam$" title="^Steam$"] floating disable
+
+for_window [class="zoom"] floating enable
+
 include /etc/sway/config.d/*
