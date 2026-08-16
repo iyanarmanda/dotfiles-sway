@@ -21,7 +21,8 @@
         "backlight",
         "battery",
         "battery#bat2",
-        "clock"
+        "clock",
+        "tray"
     ],
     // Modules configuration
     "sway/workspaces": {
@@ -100,6 +101,13 @@
             "default": ["", "", ""]
         },
         "tooltip": false,
+    },
+    "tray": {
+        "icon-size": 15,
+        "spacing": 5,
+        "orders": {
+            "nm-applet": 99
+        },
     },
     "custom/media": {
         "format": "{icon} {text}",
