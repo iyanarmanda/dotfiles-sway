@@ -27,6 +27,8 @@ alias l='ls -CF'
 
 # script alias
 alias droidcam-start=~/.bin/droidcam-start.sh
+alias obs-cam-on='sudo modprobe v4l2loopback devices=1 video_nr=10 card_label="OBS Virtual Camera" exclusive_caps=1 && echo "OBS Virtual Camera started at /dev/video10"'
+alias obs-cam-off='sudo modprobe -r v4l2loopback && echo "OBS Virtual Camera stopped"'
 
 if [[ $- == *i* ]] && command -v fastfetch >/dev/null 2>&1; then
   fastfetch
