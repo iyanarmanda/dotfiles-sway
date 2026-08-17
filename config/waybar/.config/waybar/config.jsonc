@@ -1,45 +1,24 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
+    "height": 30,
+    "spacing": 4,
     "modules-left": [
         "sway/workspaces",
         "sway/mode",
         "sway/scratchpad",
-        "custom/media"
     ],
-//    "modules-center": [
-//        "clock"
-//    ],
     "modules-right": [
+        "custom/uptime",
+        "custom/updates",
         "pulseaudio",
-        "network",
         "backlight",
+        "network",
         "battery",
-        "battery#bat2",
         "clock",
         "tray"
     ],
-    // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -47,12 +26,12 @@
     "sway/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
-        "format-icons": ["", ""],
+        "format-icons": ["", "󰖲"],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
     "clock": {
-        "format": "{:%a, %d %b %Y - %H:%M}",
+        "format": "{:%a, %d %b %Y | %H:%M}",
         "tooltip": false
     },
     "backlight": {
@@ -62,42 +41,34 @@
     },
     "battery": {
         "states": {
-            // "good": 95,
+            "good": 95,
             "warning": 30,
             "critical": 15
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""],
+        "format-icons": ["󰂎", "󰁼", "󰁾", "󰂁", "󰁹"],
         "tooltip": false
     },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
     "network": {
-        "format-wifi": "{signalStrength}%    via {ifname}",
-        "format-disconnected": "Disconnected ⚠",
+        "format-wifi": "{signalStrength}% 󰖩 via {ifname}",
+        "format-disconnected": "Disconnected 󰖪",
         "tooltip": false
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
+        "format": "{volume}% {icon}  {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-bluetooth-muted": "󰂲 {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% 󰍬",
+        "format-source-muted": "󰍭",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
+            "headphone": "󰋋",
+            "headset": "󰋎",
             "default": ["", "", ""]
         },
         "tooltip": false,
@@ -109,16 +80,17 @@
             "nm-applet": 99
         },
     },
-    "custom/media": {
-        "format": "{icon} {text}",
+    "custom/updates": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/package.sh",
         "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        "interval": 3600,
+        "signal": 8
     },
+    "custom/uptime": {
+        "format": "󰔛 {}",
+        "exec": "uptime -p | sed -e 's/up //' -e 's/ hours\\?/h/' -e 's/ minutes\\?/m/' -e 's/ days\\?/d/'",
+        "interval": 300,
+        "tooltip": false,
+    }
 }
