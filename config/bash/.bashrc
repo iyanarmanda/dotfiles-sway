@@ -25,6 +25,9 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# script alias
+alias droidcam-start=~/.bin/droidcam-start.sh
+
 if [[ $- == *i* ]] && command -v fastfetch >/dev/null 2>&1; then
   fastfetch
 fi
