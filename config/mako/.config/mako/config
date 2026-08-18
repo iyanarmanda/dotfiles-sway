@@ -49,3 +49,9 @@ default-timeout=0
 
 #[grouped]
 #border-color=#89b4fa
+
+[app-name=mpd]
+default-timeout=2500
+border-color=#fab387
+text-color=#a6adc8
+background-color=#1e1e2edd

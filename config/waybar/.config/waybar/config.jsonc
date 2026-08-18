@@ -6,7 +6,11 @@
         "sway/workspaces",
         "sway/mode",
         "sway/scratchpad",
+        "mpd"
     ],
+//    "modules-center": [
+//        "mpd"
+//    ],
     "modules-right": [
         "custom/uptime",
         "custom/updates",
@@ -70,6 +74,33 @@
             "headphone": "󰋋",
             "headset": "󰋎",
             "default": ["", "", ""]
+        },
+        "tooltip": false,
+    },
+    "mpd": {
+        "format": "{stateIcon} [{singleIcon}{repeatIcon}{randomIcon}{consumeIcon}] {artist} - {title}",
+        "max-length": 40,
+        "min-length": 10,
+        "format-disconnected": "󰝛 Disconnected",
+        "format-stopped": "",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "signal": 10,
+        "consume-icons": {
+            "on": "󰆐 "
+        },
+        "random-icons": {
+            "on": "󰒝 "
+        },
+        "repeat-icons": {
+            "on": "󰑖 "
+        },
+        "single-icons": {
+            "on": "󰑘 "
+        },
+        "state-icons": {
+            "paused": "󰏤",
+            "playing": "󰐊"
         },
         "tooltip": false,
     },

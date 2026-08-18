@@ -55,6 +55,8 @@ exec nm-applet --indicator
 
 exec mako
 
+exec systemctl --user start mpd
+
 #You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
@@ -120,6 +122,9 @@ exec swayidle -w \
     bindsym $mod+Shift+e exec ~/.config/sway/scripts/powermenu.sh
 
     bindsym $mod+Ctrl+l  exec $lock_blur_script
+
+#    bindsym $mod+Shift+i exec ~/.config/sway/scripts/toggle-autolock.sh
+
 #
 # Moving around:
 #
@@ -301,6 +306,36 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+n exec makoctl dismiss
 
+mode "mpd" {
+    bindsym p exec mpc toggle
+    bindsym s exec mpc stop
+
+    bindsym l        exec mpc next
+    bindsym h        exec mpc prev
+    bindsym Shift+l  exec mpc seek +5
+    bindsym Shift+h  exec mpc seek -5
+
+    bindsym n exec ~/.config/sway/scripts/mpd-next-song.sh
+
+    bindsym k exec mpc volume +5
+    bindsym j exec mpc volume -5
+
+    bindsym z exec mpc random
+    bindsym r exec mpc repeat
+    bindsym y exec mpc single
+    bindsym c exec mpc consume
+
+    bindsym o exec       ~/.config/sway/scripts/mpd-playlist.sh
+    bindsym Shift+o exec ~/.config/sway/scripts/mpd-songs.sh
+
+    bindsym u exec mpc update
+
+    bindsym Return       mode "default"
+    bindsym Escape       mode "default"
+    bindsym $mod+Shift+m mode "default"
+}
+
+bindsym $mod+Shift+m mode "mpd"
 
 #
 # Status Bar:

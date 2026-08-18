@@ -1,0 +1,71 @@
+configuration {
+    font: "JetBrainsMono Nerd Font 10";
+    show-icons: false;
+}
+
+@import "~/.config/theme/catppuccin-mocha.rasi"
+
+* {
+    bg0:     #1e1e2ecc;
+    bg1:     @surface0;
+    fg:      @text;
+    accent:  @blue;
+
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+window {
+    location:         north;
+    anchor:           north;
+    x-offset:         0px;
+    y-offset:         10px;
+    width:            35%;
+    border:           2px;
+    border-color:     @accent;
+    background-color: @bg0;
+    padding:          12px;
+}
+
+mainbox {
+    spacing:          8px;
+    children:         [ "inputbar", "listview" ];
+}
+
+inputbar {
+    background-color: @bg1;
+    padding:          8px 12px;
+    children:         [ "prompt", "entry" ];
+}
+
+prompt {
+    text-color:       @accent;
+    margin:           0px 8px 0px 0px;
+}
+
+entry {
+    placeholder:      "Search playlist...";
+    placeholder-color:@fg;
+}
+
+listview {
+    columns:          1;
+    lines:            4;
+    cycle:            true;
+    scrollbar:        false;
+    spacing:          4px;
+}
+
+element {
+    padding:          6px 10px;
+    text-color:       @fg;
+}
+
+element selected {
+    background-color: @accent;
+    text-color:       @bg0;
+}
+
+element-text {
+    text-color:       inherit;
+}
