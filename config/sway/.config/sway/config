@@ -19,9 +19,8 @@ set $term foot
 set $menu rofi -show drun -theme ~/.config/rofi/launcher.rasi
 
 # Other variables
-set $screenshot_script      ~/.config/sway/scripts/screenshot.sh
-set $lock_wallpaper_script  ~/.config/sway/scripts/lock-wallpaper.sh
-set $lock_blur_script       ~/.config/sway/scripts/lock-blur.sh
+set $screenshot_script  ~/.config/sway/scripts/screenshot.sh
+set $autolock_script    ~/.config/sway/scripts/autolock.sh
 
 font pango:JetBrainsMono Nerd Font 10
 
@@ -63,10 +62,7 @@ exec systemctl --user start mpd
 #
 # Example configuration:
 #
-exec swayidle -w \
-    timeout 600 $lock_wallpaper_script \
-    timeout 630 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-    before-sleep $lock_wallpaper_script
+exec $autolock_script start
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -121,9 +117,9 @@ exec swayidle -w \
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec ~/.config/sway/scripts/powermenu.sh
 
-    bindsym $mod+Ctrl+l  exec $lock_blur_script
+    bindsym $mod+Ctrl+l  exec ~/.config/sway/scripts/lock-blur.sh
 
-#    bindsym $mod+Shift+i exec ~/.config/sway/scripts/toggle-autolock.sh
+    bindsym $mod+Shift+i exec $autolock_script toggle
 
 #
 # Moving around:

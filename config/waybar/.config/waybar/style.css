@@ -66,6 +66,7 @@ button {
 #custom-updates,
 #custom-uptime,
 #custom-dnd,
+#custom-autolock,
 #mpd {
     padding: 0 10px;
     color: @subtext1;
@@ -142,7 +143,7 @@ button {
     color: @red;
 }
 
-#custom-dnd {
+#custom-dnd, #custom-autolock {
     color: @yellow;
     border-bottom: 2px solid @yellow;
 }

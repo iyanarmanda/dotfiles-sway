@@ -7,6 +7,7 @@
         "sway/mode",
         "sway/scratchpad",
         "custom/dnd",
+        "custom/autolock",
         "mpd"
     ],
 //    "modules-center": [
@@ -131,5 +132,12 @@
         "signal": 8,
         "format": "{}",
         "tooltip": false
-    }
+    },
+    "custom/autolock": {
+        "exec": "~/.config/sway/scripts/autolock.sh status",
+        "interval": "once",
+        "signal": 9,
+        "format": "{}",
+        "tooltip": false
+},
 }
