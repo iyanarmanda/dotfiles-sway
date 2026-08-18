@@ -55,3 +55,6 @@ default-timeout=2500
 border-color=#fab387
 text-color=#a6adc8
 background-color=#1e1e2edd
+
+[mode=do-not-disturb]
+invisible=1

@@ -6,6 +6,7 @@
         "sway/workspaces",
         "sway/mode",
         "sway/scratchpad",
+        "custom/dnd",
         "mpd"
     ],
 //    "modules-center": [
@@ -123,5 +124,12 @@
         "exec": "uptime -p | sed -e 's/up //' -e 's/ hours\\?/h/' -e 's/ minutes\\?/m/' -e 's/ days\\?/d/'",
         "interval": 300,
         "tooltip": false,
+    },
+    "custom/dnd": {
+        "exec": "~/.config/sway/scripts/toggle-notification.sh status",
+        "interval": "once",
+        "signal": 8,
+        "format": "{}",
+        "tooltip": false
     }
 }
