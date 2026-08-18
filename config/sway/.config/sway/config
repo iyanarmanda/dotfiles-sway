@@ -300,8 +300,10 @@ bindsym $mod+r mode "resize"
 # Others
 #
 
-bindsym $mod+n exec makoctl dismiss
+bindsym $mod+n       exec makoctl dismiss
 bindsym $mod+Shift+n exec ~/.config/sway/scripts/toggle-notification.sh toggle
+
+bindsym $mod+i exec ~/.config/sway/scripts/applets.sh
 
 mode "mpd" {
     bindsym p exec mpc toggle

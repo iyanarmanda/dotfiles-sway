@@ -1,0 +1,95 @@
+/**
+ * Inspired by:
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Rofi Theme File
+ * Rofi Version: 1.7.3
+ * https://github.com/adi1090x/rofi/blob/master/files/applets/type-2/style-1.rasi
+ **/
+
+@import "~/.config/theme/catppuccin-mocha.rasi"
+
+/*****----- Configuration -----*****/
+configuration {
+    show-icons:                 false;
+}
+
+* {
+    background:     #1e1e2ecc;
+    background-alt: #45475acc;
+    foreground:     @text;
+    selected:       @blue;
+
+    font: "JetBrainsMono Nerd Font 22";
+}
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    east;
+    anchor:                      east;
+    fullscreen:                  false;
+    width:                       120px;
+    x-offset:                    -10px;
+    y-offset:                    0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    cursor:                      "default";
+    background-color:            @background;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     15px;
+    margin:                      0px;
+    padding:                     15px;
+    background-color:            transparent;
+    children:                    [ "listview" ];
+}
+
+/*****------ Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     6;
+    lines:                       1;
+    cycle:                       true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    
+    spacing:                     15px;
+    background-color:            transparent;
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    padding:                     23px 10px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+
+element normal {
+    background-color:            var(background-alt);
+}
+
+element selected.normal {
+    background-color:            var(selected);
+    text-color:                  var(background);
+}
