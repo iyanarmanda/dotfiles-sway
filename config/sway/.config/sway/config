@@ -303,6 +303,8 @@ bindsym $mod+r mode "resize"
 bindsym $mod+n       exec makoctl dismiss
 bindsym $mod+Shift+n exec ~/.config/sway/scripts/toggle-notification.sh toggle
 
+bindsym $mod+p exec rofi -show window -theme ~/.config/rofi/window.rasi
+
 bindsym $mod+i exec ~/.config/sway/scripts/applets.sh
 
 mode "mpd" {
