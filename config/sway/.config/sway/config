@@ -121,6 +121,9 @@ exec $autolock_script start
 
     bindsym $mod+Shift+i exec $autolock_script toggle
 
+    bindsym $mod+b exec firefox
+    bindsym $mod+Shift+f exec pcmanfm
+
 #
 # Moving around:
 #
