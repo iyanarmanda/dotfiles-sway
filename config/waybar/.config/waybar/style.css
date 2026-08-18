@@ -94,14 +94,17 @@ button {
 
 #battery.charging, #battery.plugged {
     color: @green;
+    border-bottom: 2px solid @green;
 }
 
 #battery.critical:not(.charging) {
     color: @red;
+    border-bottom: 2px solid @red;
 }
 
 #network.disconnected {
     color: @yellow;
+    border-bottom: 2px solid @yellow;
 }
 
 #scratchpad {
@@ -123,12 +126,9 @@ button {
     border-bottom: 2px solid @subtext0;
 }
 
-#mpd.stopped {
-    color: @subtext0;
-}
-
 #mpd.disconnected {
     color: @red;
+    border-bottom: 2px solid @red;
 }
 
 #tray {
@@ -136,11 +136,12 @@ button {
 }
 
 #custom-updates.has-updates {
-    color: @blue;
+    color: @sapphire;
 }
 
 #custom-update.error {
     color: @red;
+    border-bottom: 2px solid @red;
 }
 
 #custom-dnd, #custom-autolock {
