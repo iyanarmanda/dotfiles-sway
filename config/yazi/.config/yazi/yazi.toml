@@ -66,6 +66,9 @@ download = [
 swayimg = [
 	{ run = 'swayimg "$@"', orphan = true, desc = "swayimg" },
 ]
+imv = [
+  { run = 'imv "$1" "$(dirname "$1")"', desc = "imv", orphan = true }
+]
 zathura = [
 	{ run = 'zathura "$@"', orphan = true, desc = "zathura" },
 ]
@@ -78,7 +81,7 @@ rules = [
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# Image
 #	{ mime = "image/*", use = [ "open", "reveal" ] },
-	{ mime = "image/*", use = "swayimg" },
+	{ mime = "image/*", use = [ "imv" ] },
 	# Media
 	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
 	# Code
