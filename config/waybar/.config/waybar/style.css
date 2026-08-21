@@ -1,7 +1,7 @@
 @import "themes/catppuccin-mocha.css";
 
 * {
-    font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "JetBrainsMono Nerd Font", Roboto, sans-serif;
     font-size: 13px;
 }
 
@@ -94,7 +94,6 @@ button {
 
 #battery.charging, #battery.plugged {
     color: @green;
-    border-bottom: 2px solid @green;
 }
 
 #battery.critical:not(.charging) {
@@ -123,12 +122,10 @@ button {
 
 #mpd.paused {
     color: @subtext0;
-    border-bottom: 2px solid @subtext0;
 }
 
 #mpd.disconnected {
     color: @red;
-    border-bottom: 2px solid @red;
 }
 
 #tray {
