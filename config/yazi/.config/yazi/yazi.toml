@@ -67,7 +67,8 @@ swayimg = [
 	{ run = 'swayimg "$@"', orphan = true, desc = "swayimg" },
 ]
 imv = [
-  { run = 'imv "$0" "$(dirname "$0")"', desc = "imv", orphan = true }
+#  { run = 'imv "$1" "$(dirname "$1")"', desc = "imv", orphan = true }
+  { run = 'imv "$(dirname "%s1")" -n "%s1"', desc = "imv", orphan = true }
 ]
 zathura = [
 	{ run = 'zathura "$@"', orphan = true, desc = "zathura" },
