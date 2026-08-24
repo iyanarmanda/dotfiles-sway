@@ -67,7 +67,7 @@ swayimg = [
 	{ run = 'swayimg "$@"', orphan = true, desc = "swayimg" },
 ]
 imv = [
-  { run = 'imv "$1" "$(dirname "$1")"', desc = "imv", orphan = true }
+  { run = 'imv "$0" "$(dirname "$0")"', desc = "imv", orphan = true }
 ]
 zathura = [
 	{ run = 'zathura "$@"', orphan = true, desc = "zathura" },
@@ -92,7 +92,7 @@ rules = [
 	{ mime = "inode/empty", use = [ "edit", "reveal" ] },
 	# Virtual file system
 	{ mime = "vfs/{absent,stale}", use = "download" },
-	{ mime = "application/pdf", use = "zathura" },
+	{ mime = "application/pdf", use = "open" },
 	# Fallback
 	{ url = "*", use = [ "open", "reveal" ] },
 ]

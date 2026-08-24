@@ -21,7 +21,7 @@ light = ""
 # : App {{{
 
 [app]
-overall = { bg = "#1e1e2e" }
+#overall = { bg = "#1e1e2e" }
 
 # : }}}
 
