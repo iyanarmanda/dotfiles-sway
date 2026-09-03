@@ -15,6 +15,14 @@ image/gif=imv.desktop
 image/webp=imv.desktop
 image/vnd.microsoft.icon=imv.desktop
 
+audio/mpeg=mpv.desktop
+audio/flac=mpv.desktop
+audio/wav=mpv.desktop
+audio/x-wav=mpv.desktop
+audio/ogg=mpv.desktop
+audio/m4a=mpv.desktop
+audio/aac=mpv.desktop
+
 [Added Associations]
 image/png=imv.desktop;
 image/jpeg=imv.desktop;
