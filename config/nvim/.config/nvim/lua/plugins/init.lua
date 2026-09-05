@@ -13,6 +13,13 @@ return {
     end,
   },
 
+  {
+    "ellisonleao/glow.nvim",
+    config = true,
+    cmd = "Glow",
+    ft = "markdown",
+  },
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
