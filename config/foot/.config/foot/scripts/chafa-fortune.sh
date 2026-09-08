@@ -10,7 +10,7 @@ fi
 
 IMAGE_DIR="$HOME/.config/foot/images"
 
-RANDOM_NUM=$(( (RANDOM % 23) + 1 ))
+RANDOM_NUM=$(( (RANDOM % 19) + 1 ))
 IMAGE="$IMAGE_DIR/${RANDOM_NUM}.jpg"
 
 CYAN='\033[0;36m'
