@@ -56,6 +56,8 @@ exec mako
 
 exec systemctl --user start mpd
 
+#exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 #You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
@@ -306,10 +308,21 @@ mode "mpd" {
     bindsym Shift+l  exec mpc seek +5
     bindsym Shift+h  exec mpc seek -5
 
+    bindsym 0 exec mpc seek 0%
+    bindsym 1 exec mpc seek 10%
+    bindsym 2 exec mpc seek 20%
+    bindsym 3 exec mpc seek 30%
+    bindsym 4 exec mpc seek 40%
+    bindsym 5 exec mpc seek 50%
+    bindsym 6 exec mpc seek 60%
+    bindsym 7 exec mpc seek 70%
+    bindsym 8 exec mpc seek 80%
+    bindsym 9 exec mpc seek 90%
+
     bindsym n exec ~/.config/sway/scripts/mpd-next-song.sh
 
-    bindsym k exec mpc volume +5
-    bindsym j exec mpc volume -5
+    bindsym k exec ~/.config/sway/scripts/mpd-volume.sh +5
+    bindsym j exec ~/.config/sway/scripts/mpd-volume.sh -5
 
     bindsym z exec mpc random
     bindsym r exec mpc repeat
